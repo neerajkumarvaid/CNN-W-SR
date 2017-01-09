@@ -2,7 +2,7 @@
 """
 Created on Fri Jan  6 17:25:33 2017
 
-@author: apple
+@author: Neeraj
 """
 
 #from __future__ import print_function
@@ -52,19 +52,19 @@ print('Creating model...')
 model = Sequential()
 model.add(Convolution2D(64,7,7,border_mode = 'same',input_shape=trainX.shape[1:]))
 model.add(Activation("relu"))
-model.add(Dropout(0.1))
+#model.add(Dropout(0.1))
 
 model.add(Convolution2D(32,5,5,border_mode = 'same',input_shape=trainX.shape[1:]))
 model.add(Activation('relu'))
-model.add(Dropout(0.2))
+#model.add(Dropout(0.2))
 
 model.add(Convolution2D(32,3,3,border_mode = 'same',input_shape=trainX.shape[1:]))
 model.add(Activation('linear'))
-model.add(Dropout(0.25))
+#model.add(Dropout(0.25))
 
 model.add(Flatten())
 model.add(Dense(trainY.shape[1],activation = "linear"))
-model.add(Dropout(0.5))
+#model.add(Dropout(0.5))
 
 #adm = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
 #sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
